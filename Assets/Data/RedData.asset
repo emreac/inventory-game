@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 801797b07d1f9774fa5c19dd74d1ac0d, type: 3}
+  m_Name: RedData
+  m_EditorClassIdentifier: 
+  item1: {fileID: 593280569901542506, guid: 25492e4202a910e46ad12f3b9df5582f, type: 3}
+  item2: {fileID: 2034423912126322506, guid: 305879c860df01f459e469ccafd9fd23, type: 3}
+  resultItem: {fileID: 7523593656413502587, guid: cb022f13d69645c49aa3264801e3f46b,
+    type: 3}
