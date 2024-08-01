@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.18028653, g: 0.22571698, b: 0.30692574, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -254,12 +255,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
-    m_FrameInfluence: 0.1
-    m_JitterScale: 1
-    m_MipBias: 0
-    m_VarianceClampScale: 0.9
-    m_ContrastAdaptiveSharpening: 0
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!114 &330585548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,6 +307,7 @@ GameObject:
   - component: {fileID: 395543633}
   - component: {fileID: 395543632}
   - component: {fileID: 395543631}
+  - component: {fileID: 395543635}
   m_Layer: 5
   m_Name: UI_Inventory
   m_TagString: Untagged
@@ -396,6 +398,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &395543635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395543630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96c7faa551e92a4aac7bc0c0aeffd7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,6 +1520,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479177677}
   m_CullTransparentMesh: 1
+--- !u!1 &1513802288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1513802289}
+  - component: {fileID: 1513802290}
+  m_Layer: 0
+  m_Name: ItemAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1513802289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513802288}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1513802290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513802288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7153eef8ebcd10428e3c522d968026f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfItemWorld: {fileID: 3601008528463082727, guid: fad3fb4e77eca2345abfba6db9ac8247,
+    type: 3}
+  swordSprite: {fileID: 21300000, guid: 79c29905121c61a49a3ab9fe74766bc6, type: 3}
+  healthPotionSprite: {fileID: 21300000, guid: 15b5d053f7fcbea42b03d527a0acdb83, type: 3}
+  manaPotionSprite: {fileID: 21300000, guid: e2037c0805d43f74993f0b1f7182dea2, type: 3}
+  coinSprite: {fileID: 21300000, guid: 4f48e100dd2a89046ae8ceb63ad0e727, type: 3}
+  medkitSprite: {fileID: 21300000, guid: 97dacacab592b554885a9c939a5955d3, type: 3}
 --- !u!1 &1574562328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,6 +1619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a4d0f561dcd569429ab48918fbf888b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiInventory: {fileID: 395543635}
   joystick: {fileID: 1220415947}
   controller: {fileID: 1574562331}
   inputCanvas: {fileID: 522657980}
@@ -1829,3 +1895,4 @@ SceneRoots:
   - {fileID: 815760460}
   - {fileID: 522657981}
   - {fileID: 395543634}
+  - {fileID: 1513802289}

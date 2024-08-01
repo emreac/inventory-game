@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    private Inventory inventory;
+    [SerializeField] private UI_Inventory uiInventory;
 
     public VariableJoystick joystick;
     public CharacterController controller;
@@ -14,6 +15,17 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public bool walking;
 
+
+    private void Awake()
+    {
+        //Using Singleton
+        inventory = new Inventory();
+        uiInventory.SetInventory(inventory);
+
+        ItemWorld.SpawnItemWorld(new Vector3(4, 1, 3), new Item { itemType = Item.ItemType.HealthPotion, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(2, 1, 4), new Item { itemType = Item.ItemType.ManaPotion, amount = 1 });
+        ItemWorld.SpawnItemWorld(new Vector3(8, 1, 6), new Item { itemType = Item.ItemType.Sword, amount = 1 });
+    }
 
     private void Start()
     {
@@ -50,7 +62,12 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-      
+        ItemWorld itemWorld = other.GetComponent<ItemWorld>();
+        if (itemWorld != null)
+        {
+            inventory.AddItem(itemWorld.GetItem());
+            itemWorld.DestroySelf();
+        }
     }
 
 }
