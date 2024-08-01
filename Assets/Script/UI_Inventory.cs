@@ -23,7 +23,7 @@ public class UI_Inventory : MonoBehaviour
         RefreshInventoryItems();
     }
 
-    private void Inventory_OnItemListChanged(object sender, EventArgs e)
+    private void Inventory_OnItemListChanged(object sender, System.EventArgs e)
     {
         RefreshInventoryItems();
     }
